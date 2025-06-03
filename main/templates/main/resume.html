@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Resume{% endblock %}
+
+{% block content %}
+    <main class="main">
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            {% for resume in resumes%}
+            <div class="resume-item">
+            <ul>
+              <li><h4>{{resume.job_title}}</h4></li><br>
+              <li><h5>{{resume.company}}</h5></li><br>
+              <li><h5>{{resume.location}}</h5></li><br>
+              <li><h5>{{resume.start_year}}-{{resume.end_year}}</h5></li><br>
+              <li><p>{{resume.description}}</p></li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+             {% empty %}
+              <p>No records found.</p>
+            {% endfor %}
+
+            </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+{% endblock %}

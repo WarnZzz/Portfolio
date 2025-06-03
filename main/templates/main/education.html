@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Education{% endblock %}
+
+{% block content %}
+  <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Education</h2>
+        {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>{{about.name}}</h4>
+              <p><em>{{about.short_description}}</em></p>
+              <ul>
+                <li>{{contact.address}}</li>
+                <li>{{contact.phone}}</li>
+                <li>{{contact.email}}</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+          </div>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Education</h3>
+             {% for education in educations %}
+            <div class="resume-item">
+              <h4>{{education.degree}}</h4><br>
+              <h5>{{education.institution}}</h5><br>
+              <h5>{{education.field_of_study}}</h5><br>
+              <h5>{{education.start_date}}-{{education.end_date}}</h5>
+              <p><em>{{education.description}}</em></p>
+            </div><!-- Edn Resume Item -->
+             {% empty %}
+              <p>No education records found.</p>
+            {% endfor %}
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+{% endblock %}
