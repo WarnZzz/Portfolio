@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portfolio-8ptq.onrender.com','www.ranzanpaudel.com']
 
 
 # Application definition
