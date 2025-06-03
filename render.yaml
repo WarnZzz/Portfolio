@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: myportfolio
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn myportfolio.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myportfolio.settings
